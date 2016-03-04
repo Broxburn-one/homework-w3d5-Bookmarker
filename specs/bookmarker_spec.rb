@@ -10,16 +10,16 @@ class TestBookmarker < Minitest::Test
       'genre' =>  'Social Media',
       'details' => 'Used mainly for work'
     }
-    @bookmarker = Bookmarker.new(options);
-  end
+    @bookmarker = Bookmarker.new(options)
 
-
-  def test_title
-    assert_equal('Twitter', @bookmarker.title())
   end
 
   def test_url
     assert_equal('https://twitter.com', @bookmarker.url())
+  end
+
+  def test_title
+    assert_equal('Twitter', @bookmarker.title())
   end
 
   def test_genre
@@ -29,4 +29,5 @@ class TestBookmarker < Minitest::Test
   def test_details
     assert_equal('Used mainly for work', @bookmarker.details())
   end
+
 end
