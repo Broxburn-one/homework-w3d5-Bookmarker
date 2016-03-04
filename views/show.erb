@@ -1,0 +1,20 @@
+
+
+<b>Website:</b>
+<p><%= @bookmarker.title() %></p>
+
+<b>Genre</b>
+<p><%= @bookmarker.genre %> x <%= @pizza.topping %></p>
+
+<b>Web Link</b>
+<p><%= @pizza.url %> x <%= @pizza.topping %></p>
+
+<b>Details</b>
+<p><%= @bookmarker.details %> x <%= @pizza.topping %></p>
+
+
+<a href="/bookmarker/<%= @bookmarker.id %>/edit">Edit Bookmark</a>
+
+<form action="/bookmarker/<%= @bookmarker.id %>/delete" method="post">
+  <input type="submit" value="delete">
+</form>
