@@ -9,8 +9,6 @@ get '/bookmarker' do
 end
 
 
-
-
 get '/bookmarker/new' do 
   erb(:new)
 end
@@ -22,9 +20,27 @@ get '/bookmarker/:id' do
   erb(:show)
 end
 
+#  EDIT
+get '/bookmarker/:id/edit' do
+  @bookmarker = Bookmarker.find(params[:id])  
+  erb(:edit)
+end
+
+# UPDATE PATH
+  post '/bookmarker/:id' do
+  Bookmarker.update(params)
+  redirect to("/bookmarker/#{params[:id]}")  # a get request --> runs show block
+end
+
 # CREATE
 post '/bookmarker' do 
   @bookmarker = Bookmarker.new( params )
   @bookmarker.save
   erb( :create )
+end
+
+#  DESTROY
+post '/bookmarker/:id/delete' do
+  Bookmarker.destroy(params[:id])
+  redirect to('/bookmarker')
 end
