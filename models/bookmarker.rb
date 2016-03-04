@@ -29,12 +29,21 @@ class Bookmarker
   end
 
   def self.all()
-    bookmarker = Bookmarker.run_sql("SELECT * FROM pizzas")  # nb sql don't need ; here
+    bookmarker = Bookmarker.run_sql("SELECT * FROM bookmarkers")  # nb sql don't need ; here
     result = bookmarker.map { |b| Bookmarker.new( b ) }
     
     return result
   end
 
+  def self.find(id)
+    bookmarker = Bookmarker.run_sql( "SELECT * FROM bookmarkers WHERE id = #{id}")  
+    result = Bookmarker.new(bookmarker.first) # or could be pizza[0]
+    return result
+  end
+
+  def self.destroy(id)
+    Bookmarker.run_sql("DELETE FROM bookmarkers where id = #{id}")
+  end
 
 
 private
