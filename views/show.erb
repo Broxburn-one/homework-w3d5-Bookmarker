@@ -1,20 +1,20 @@
 
 
-<b>Website:</b>
-<p><%= @bookmarker.title() %></p>
+  <b>Website:</b>
+  <p><%= @bookmarker.title %></p>
 
-<b>Genre</b>
-<p><%= @bookmarker.genre %></p>
+  <b>Genre</b>
+  <p><%= @bookmarker.genre %></p>
 
-<b>Web Link</b>
-<p><%= @bookmarker.url %></p>
+  <b>Web Link</b>
+  <p><%= @bookmarker.url %></p>
 
-<b>Details</b>
-<p><%= @bookmarker.details %></p>
+  <b>Details</b>
+  <p><%= @bookmarker.details %></p>
 
 
-<a href="/bookmarker/<%= @bookmarker.id %>/edit">Edit Bookmark</a>
+  <a href="/bookmarker/<%= @bookmarker.id %>/edit">Edit Bookmark</a>
 
-<form action="/bookmarker/<%= @bookmarker.id %>/delete" method="post">
-  <input type="submit" value="delete">
-</form>
+  <form action="/bookmarker/<%= @bookmarker.id %>/delete" method="post">
+    <input type="submit" value="delete">
+  </form>

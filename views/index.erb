@@ -1,24 +1,35 @@
-<div class="content">
 
 <h2>Bookmarks</h2>
 
 <% @bookmarkers.each do |bookmarker| %>
   
-  <b>Website:</b>
-  <p><%= bookmarker.title() %></p>
 
-  <b>Genre</b>
-  <p><%= bookmarker.genre %></p>
 
-  <b>Web Link</b>
-  <p><%= bookmarker.url %></p>
 
-  <b>Details</b>
-<p><%= bookmarker.details %></p>
 
-  <a href="/bookmarker/<%= bookmarker.id %>">View Bookmark</a>
-  <hr />
 
+<table>
+  <tr>
+    <td>Title:</td>
+    <td><%= bookmarker.title() %></td>
+   </tr>
+  <tr>
+    <td>Link:</td>
+    <td><%= bookmarker.url() %></td>
+   </tr>
+   <tr>
+    <td>Genre:</td>
+    <td><%= bookmarker.genre() %></td>
+   </tr>
+    <td>Details:</td>
+    <td><%= bookmarker.details() %></td>
+   </tr>
+</table>
+
+  <div class="view">
+    <a href="/bookmarker/<%= bookmarker.id %>">View Bookmark</a>
+  </div>
+<br>
+<div class="customHr">.</div>
 <% end %>
 
-</div>
