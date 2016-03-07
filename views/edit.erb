@@ -1,4 +1,4 @@
-
+<div class="create">
   <h2>Edit a Bookmark</h2>
 
   <form action="/bookmarker/<%= @bookmarker.id %>" method="post">
@@ -13,7 +13,9 @@
 
 
     <label for="details">Details</label>
-    <input type="text" name="details" value="@bookmarker.details %>"><br>
+    <input type="text" name="details" value="<%= @bookmarker.details %>"><br>
 
     <input type='submit' value="Update Bookmark">
   </form>
+
+</div>
