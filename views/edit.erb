@@ -3,17 +3,17 @@
 
   <form action="/bookmarker/<%= @bookmarker.id %>" method="post">
     <label for="title">Title</label>
-    <input type="text" name="title" value="<%= @bookmarker %>"><br>
+    <input type="text" name="title" value="<%= @bookmarker.title %>"><br>
 
     <label for="genre">Genre</label>
-    <input type="text" name="genre"><br>
+    <input type="text" name="genre" value="<%= @bookmarker.genre %>"><br>
 
     <label for="url">Web Link</label>
-    <input type="text" name="url"><br>
+    <input type="text" name="url" value="<%= @bookmarker.url %>"><br>
 
 
     <label for="details">Details</label>
-    <input type="text" name="details"><br>
+    <input type="text" name="details" value="@bookmarker.details %>"><br>
 
     <input type='submit' value="Update Bookmark">
   </form>
